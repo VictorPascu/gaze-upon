@@ -1,5 +1,5 @@
 # GazeUpon
-Digital signage through your browser. Allows you to control streaming pages supporting multiple types of content (currently YouTube and Vimeo videos) from a dashboard. The original use case is aimed at displaying consistent data multiple screens.
+Digital signage through your browser. Allows you to control streaming pages supporting multiple types of content (currently YouTube and Vimeo videos) from a dashboard. The original use case is aimed at displaying consistent data on or across multiple screens.
 
 ## How to use
 
