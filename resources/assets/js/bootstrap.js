@@ -24,6 +24,9 @@ window.axios = require('axios');
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
+// window.axios.defaults.headers.common['X-CSRF-TOKEN'] = window.Laravel.csrfToken;
+// window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+
 /**
  * Next we will register the CSRF Token as a common header with Axios so that
  * all outgoing HTTP requests automatically have it attached. This is just
@@ -54,3 +57,15 @@ if (token) {
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     encrypted: true
 // });
+
+import Echo from "laravel-echo"
+
+window.io = require('socket.io-client');
+// Have this in case you stop running your laravel echo server
+if (typeof io !== 'undefined') {
+    window.Echo = new Echo({
+        broadcaster: 'socket.io',
+        host: window.location.hostname + ':6001',
+        auth: {headers: {'Authorization': 'Bearer ' + '85286900776f9d1c2512038a87854f3c'}}
+    });
+}
