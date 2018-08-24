@@ -22,7 +22,8 @@ class StreamController extends Controller
         return view('listener.index')->with(['feedname' => $feedname]);
     }
 
-    public function playItem(Request $request) {
+    public function playItem(Request $request)
+    {
             $type = PlayableItemType::whereType($request['body']['type'])->first();
             $duration = $request['body']['duration'];
             $path = $request['body']['path'];

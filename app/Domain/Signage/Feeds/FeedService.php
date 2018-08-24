@@ -79,7 +79,8 @@ class FeedService
         return $next;
     }
 
-    public function playItem(PlayableItemType $type, $name, $duration, $path, $feedname) {
+    public function playItem(PlayableItemType $type, $name, $duration, $path, $feedname)
+    {
 
         $video = new PlayableItem();
 

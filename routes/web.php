@@ -19,8 +19,3 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/control-panel', 'ControlPanelController@index');
     Route::post('/play-item', 'StreamController@playItem');
 });
-
-
-
-
-
