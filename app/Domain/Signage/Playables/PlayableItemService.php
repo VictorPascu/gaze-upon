@@ -16,7 +16,7 @@ class PlayableItemService
 
         if (strpos($url, "vimeo.com") !== false) {
             $type = 'Vimeo';
-            $videoId = substr($url, strpos($url, "vimeo.com") + 10);
+            $videoId = substr($url, strrpos($url, "/") + 1);
         }
 
         $type = PlayableItemType::whereType($type)->first();

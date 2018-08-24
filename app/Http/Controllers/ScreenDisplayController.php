@@ -21,21 +21,4 @@ class ScreenDisplayController extends Controller
     {
         return $this->playableItemService->resolveUrl($url);
     }
-
-    public function enqueueItem(Request $request, $url)
-    {
-        $type = '';
-
-        $videoId = '';
-
-        if (strpos($url, "youtube.com") !== false) {
-            $type = 'YouTube';
-            $videoid = substr($url, strpos($url, "?v=") + 3);
-        }
-
-        if (strpos($url, "vimeo.com") !== false) {
-            $type = 'Vimeo';
-            $videoid = substr($url, strpos($url, "/") + 1);
-        }
-    }
 }

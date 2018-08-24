@@ -46,7 +46,7 @@ PHP code style is PSR2. Checks against it can be run using:
 
 Minor code style problems can be fixed using:
 
-`/vendor/bin/phpcbf`. 
+`/vendor/bin/phpcbf` 
 
 ## Known bugs
 
