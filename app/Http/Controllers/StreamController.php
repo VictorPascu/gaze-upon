@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Domain\Signage\Playables\PlayableItemType;
 use Illuminate\Http\Request;
+use App\Domain\Signage\Playables\PlayableItem;
+use App\Events\PlayNewItem;
 
 class StreamController extends Controller
 {

@@ -56108,7 +56108,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var ref = this;
             $.ajax({
                 type: "POST",
-                url: '/play-new-item',
+                url: '/play-item',
                 data: {
                     'body': ref.itemToPlay,
                     'feedname': 'global-screens.default',
