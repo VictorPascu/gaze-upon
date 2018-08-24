@@ -6,11 +6,9 @@ Route::get('/', function () {
 
 Auth::routes();
 
-
-
-Route::get('/play-video1', 'ScreenDisplayController@playvideo1');
-Route::get('/play-video2', 'ScreenDisplayController@playvideo2');
-Route::get('/play-video3', 'ScreenDisplayController@playvideo3');
+Route::get('/play-video1', 'StreamController@playPresetVideo1');
+Route::get('/play-video2', 'StreamController@playPresetVideo2');
+Route::get('/play-video3', 'StreamController@playPresetVideo3');
 
 Route::get('/watch/{feedname}', 'StreamController@watchFeed');
 Route::get('/resolve-url/{url}', 'ScreenDisplayController@resolveUrl');

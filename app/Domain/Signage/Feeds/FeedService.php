@@ -8,6 +8,8 @@ use App\Domain\Signage\Playlists\PlaylistDefinition;
 use App\Domain\Signage\Playlists\PlaylistEntry;
 use App\Domain\Signage\Playlists\PlaylistService;
 use Carbon\Carbon;
+use App\Domain\Signage\Playables\PlayableItem;
+use App\Events\PlayNewItem;
 
 class FeedService
 {
