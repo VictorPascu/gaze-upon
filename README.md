@@ -16,18 +16,28 @@ Requirements:
 
 Steps:
 1. Configure your .env file. `.env.example` is provided to start you off. Make sure you're using redis as a broadcast and queue driver.
+Once done, run `php artisan key:generate` to create an app key.
 
 2. Configure laravel-echo-server.json. An example file is provided that should work out of the box.
 
 3. Install project dependencies using Composer. Run `composer install`.
 
-4. Initialize defaults to get you started. Open a terminal and run `app:init`. This will also create your admin user,
+4. Initialize defaults to get you started. Open a terminal and run `php artisan app:init`. This will also create your admin user,
 which by default is `admin@example.com` with the password `password`. 
 
 5. Start up laravel-echo-server by opening a terminal in the project root and running `laravel-echo-server start`.
 You should receive a confirmation in your terminal that the server is now running.
 
 6. Open another terminal and run `php artisan queue:work --tries=1`. Without this, real-time events will not be processed.
+
+## Development
+
+You can watch js/css files using `npm run watch-poll`.
+Tests are run using `/vendor/bin/phpunit`.
+
+Code style can be checked using `/vendor/bin/phpcs`. Minor problems can be fixed using
+`/vendor/bin/phpcbf`. PHP code style is PSR2.
+
 
 ## Todo
 

@@ -32,6 +32,6 @@ Route::get('/play-video3', 'ScreenDisplayController@playvideo3');
 
 Route::get('/resolve-url/{url}', 'ScreenDisplayController@resolveUrl');
 
-Route::post('/play-new-item', 'ScreenDisplayController@playNewItem');
+Route::post('/play-item', 'StreamController@playItem');
 
 Route::get('/control-panel', 'ControlPanelController@index');
