@@ -3,10 +3,13 @@
 namespace Tests\Unit;
 
 use App\Domain\Signage\Playlists\PlaylistService;
+use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Tests\TestCase;
 
 class PlaylistEnqueueItemFromUrlTest extends TestCase
 {
+    use DatabaseTransactions;
+
     /**
      * A basic test example.
      *

@@ -19,10 +19,10 @@ class PlayableItemService
             $videoId = substr($url, strpos($url, "vimeo.com") + 10);
         }
 
-        $type = PlayableItemType::where('type', '=', $type)->first();
+        $type = PlayableItemType::whereType($type)->first();
         $typeId = $type->id;
 
-        return ['path' => $url, 'type' => $type->name, 'videoId' => $videoId, 'typeId' => $typeId];
+        return ['path' => $url, 'type' => $type->type, 'videoId' => $videoId, 'typeId' => $typeId];
     }
 
     public function createPlayableItemFromUrl($url, $name, $duration)
