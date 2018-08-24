@@ -3,6 +3,7 @@
 namespace App\Domain\Signage\Feeds;
 
 use App\Domain\Signage\Playables\PlayableItemService;
+use App\Domain\Signage\Playables\PlayableItemType;
 use App\Domain\Signage\Playlists\PlaylistDefinition;
 use App\Domain\Signage\Playlists\PlaylistEntry;
 use App\Domain\Signage\Playlists\PlaylistService;
@@ -76,5 +77,21 @@ class FeedService
         $playlist = PlaylistDefinition::where('id', $feed->playlist_definition_id)->first();
         $next = $playlist->getItemAtPosition($feed->playable_item_now_playing_id);
         return $next;
+    }
+
+    public function playItem(PlayableItemType $type, $name, $duration, $path, $feedname) {
+
+        $video = new PlayableItem();
+
+        $video->type_id = $type->getId();
+        $video->name = $name;
+        $video->duration = $duration;
+        $video->path = $path;
+        $video->save();
+
+        $event = new PlayNewItem($video, $feedname);
+        event($event);
+
+        return response("Request successful.", 200);
     }
 }

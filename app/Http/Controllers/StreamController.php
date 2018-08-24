@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Domain\Signage\Feeds\FeedService;
 use App\Domain\Signage\Playables\PlayableItemType;
 use Illuminate\Http\Request;
 use App\Domain\Signage\Playables\PlayableItem;
@@ -9,6 +10,13 @@ use App\Events\PlayNewItem;
 
 class StreamController extends Controller
 {
+    private $feedService;
+
+    public function __construct(FeedService $feedService)
+    {
+        $this->feedService = $feedService;
+    }
+
     public function watchFeed($feedname)
     {
         return view('listener.index')->with(['feedname' => $feedname]);
@@ -21,19 +29,6 @@ class StreamController extends Controller
             $name = "";
             $feedname = $request['feedname'];
 
-            $video = new PlayableItem();
-
-            $video->type_id = $type->getId();
-            $video->name = $name;
-            $video->duration = $duration;
-            $video->path = $path;
-
-            $video->save();
-
-            $event = new PlayNewItem($video, $feedname);
-            event($event);
-
-            return response("Request successful.", 200);
-
+            return $this->feedService->playItem($type, $name, $duration, $path, $feedname);
     }
 }

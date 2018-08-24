@@ -3,10 +3,13 @@
 namespace Tests\Unit;
 
 use App\Domain\Signage\Playables\PlayableItemService;
+use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Tests\TestCase;
 
 class ResolveURLTest extends TestCase
 {
+    use DatabaseTransactions;
+
     /**
      * A basic test example.
      *
