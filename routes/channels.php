@@ -12,5 +12,14 @@
 */
 
 Broadcast::channel('App.User.{id}', function ($user, $id) {
-    return (int) $user->id === (int) $id;
+    //return (int) $user->id === (int) $id;
+    return true;
+});
+
+Broadcast::channel('global-screens.{feedname}', function ($feedname) {
+    return true;
+});
+
+Broadcast::channel('presence-global-screens', function () {
+    return true;
 });

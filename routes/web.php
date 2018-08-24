@@ -11,6 +11,27 @@
 |
 */
 
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+
 Route::get('/', function () {
-    return view('welcome');
+    return view('landing');
 });
+
+Route::get('/youtube', function () {
+    return view('youtube');
+});
+
+Route::get('/watch/{feedname}', 'StreamController@watchFeed');
+
+Route::get('/play-video1', 'ScreenDisplayController@playvideo1');
+Route::get('/play-video2', 'ScreenDisplayController@playvideo2');
+Route::get('/play-video3', 'ScreenDisplayController@playvideo3');
+
+Route::get('/resolve-url/{url}', 'ScreenDisplayController@resolveUrl');
+
+Route::post('/play-new-item', 'ScreenDisplayController@playNewItem');
+
+Route::get('/control-panel', 'ControlPanelController@index');

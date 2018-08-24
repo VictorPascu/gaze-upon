@@ -21,3 +21,24 @@ $factory->define(App\User::class, function (Faker $faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+$factory->define(App\Domain\Signage\Playlists\PlaylistDefinition::class, function (Faker $faker) {
+    return [
+        'name' => $faker->text(50)
+    ];
+});
+
+$factory->define(App\Domain\Signage\Playables\PlayableItemType::class, function (Faker $faker) {
+    return [
+        'type' => array_rand(["Vimeo", "YouTube"], 1),
+    ];
+});
+
+$factory->define(App\Domain\Signage\Playables\PlayableItem::class, function (Faker $faker) {
+    return [
+        'name' => $faker->text(50),
+        'duration' => $faker->numberBetween(1, 100),
+        'path' => 'fake',
+        'type_id' => 1
+    ];
+});
