@@ -38,6 +38,10 @@ Tests are run using `/vendor/bin/phpunit`.
 Code style can be checked using `/vendor/bin/phpcs`. Minor problems can be fixed using
 `/vendor/bin/phpcbf`. PHP code style is PSR2.
 
+## Known bugs
+
+- Transitioning to Vimeo after running YouTube videos can fail. The default video for Vimeo causes this by firing end-of-video events
+right after initializing.
 
 ## Todo
 
@@ -45,7 +49,7 @@ Code style can be checked using `/vendor/bin/phpcs`. Minor problems can be fixed
 - Support multiple feeds / multiple users;
 - Simplify / automate install;
 - Find easier way to keep required processes alive;
-- Test syncing on 2/4 adjacent monitors.
+- Test syncing on 2/4 adjacent monitors by sending a sync event to all channel listeners simultaneously with different image position offsets.
 
 ## License
 
