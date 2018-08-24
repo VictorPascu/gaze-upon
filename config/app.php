@@ -161,6 +161,7 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         Vimeo\Laravel\VimeoServiceProvider::class,
+        Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
 
     ],
 

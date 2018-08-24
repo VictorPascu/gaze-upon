@@ -32,11 +32,21 @@ You should receive a confirmation in your terminal that the server is now runnin
 
 ## Development
 
-You can watch js/css files using `npm run watch-poll`.
-Tests are run using `/vendor/bin/phpunit`.
+You can watch js/css files using: 
 
-Code style can be checked using `/vendor/bin/phpcs`. Minor problems can be fixed using
-`/vendor/bin/phpcbf`. PHP code style is PSR2.
+`npm run watch-poll`
+
+PHP tests are run using:
+ 
+ `/vendor/bin/phpunit`
+
+PHP code style is PSR2. Checks against it can be run using:
+
+`/vendor/bin/phpcs`
+
+Minor code style problems can be fixed using:
+
+`/vendor/bin/phpcbf`. 
 
 ## Known bugs
 
